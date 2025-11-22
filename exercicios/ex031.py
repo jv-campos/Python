@@ -5,3 +5,4 @@ if viagem <= 200:
 else:
     cobrar = viagem * 0.45
     print('Sua passagem custa R${:.2f}'.format(cobrar))
+print('Boa viagem!')
