@@ -1,9 +1,13 @@
-import datetime
-atual = datetime.day().year
+from datetime import date
+atual = date.today().year
 maior = 0
+menor = 0 
 for data in range(1,8):
     num = int(input('Em que ano a {}° nasceu: '.format(data)))
-    
-    if num - atual == 18:
+    idade = num - atual
+    if idade >= 21:
         maior += 1
-print('O número de pessoas maior de idade é: {}'.fomrat(maior))
+    else:
+        menor += 1
+print('{} Pessoas são maior de idade'.format(maior))
+print('{} pessoas são menor de idade'.format(menor))
