@@ -6,4 +6,4 @@ while True:
         break
     soma += n
     cont += 1
-print = (f'A soma dos {cont} números digitados é {soma}')
+print (f'A soma dos {cont} números digitados é {soma}')
