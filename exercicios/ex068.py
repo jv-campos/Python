@@ -1,34 +1,26 @@
-
-
-# POR ALGUM MOTIVO BUGA QUANDO ESCOLE PAR DEPOIS DE ALGUMAS JOGADAS 
-# REFAZER, MAS USANDO O PROGRAMA DO GUANABARA PARA COMPARAR
-
-# from random import choice
-
-# ganhos = 0
-# while True:
-#     jogar = str(input('Quer jogar impar ou par [S/N]? ')).upper()
-#     if jogar in 'Ss':
-#         jogada = int(input('Escolha um número: '))
-#         escolha = str(input('Quer impar ou par [I/P]:')).upper()
-#         lista = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-#         computador = choice(lista)
-#         decição = (jogada + computador) % 2
-#         if decição == 0 and escolha == 'P':
-#             print(f'{jogada} + {computador} = {jogada + computador}')
-#             print('O resultado deu Par. VOCÊ GANHOU!!!')
-#             ganhos += 1
-#         elif decição != 0 and escolha == 'p':
-#             print(f'{jogada} + {computador} = {jogada + computador}')
-#             print('O resultado deu Impar. EU GANHEI!!!')
-#         if decição == 0 and escolha == 'I':
-#             print(f'{jogada} + {computador} = {jogada + computador}')
-#             print('O resultado deu Par. EU GANHEI!!!')
-#         elif decição != 0 and escolha == 'I':
-#             print(f'{jogada} + {computador} = {jogada + computador}')
-#             print('O resultado deu Impar. VOCÊ GANHOU!!!')
-#             ganhos += 1
-#     else:
-#         break
-# print('Tudo bem, volte sempre')
-# print(f'Você ganhou {ganhos} vezes')
+from random import randint
+v = 0
+while True:
+    jogador = int(input('Digite um número: '))
+    computador = randint(0,10)
+    total = jogador + computador
+    tipo = ' '
+    while tipo not in 'PI':
+        tipo = str(input('Você quer par ou impar? [P/I]: ')).strip().upper()[0]
+    print(f'Você jogou {jogador}, o computador {computador}. Total {total}')
+    print('DEU PAR' if total % 2 == 0 else 'DEU IMPAR')
+    if tipo == 'P':
+        if total % 2 == 0:
+            print('VOCÊ VENCEU!!!!')
+            v += 1
+        else:
+            print('VOCÊ PERDEU!!!!')
+            break
+    elif tipo == 'I':
+        if total % 2 == 1:
+            print('VOCÊ VENCEU!!!!')
+            v += 1
+        else:
+            print('VOCÊ PERDEU!!!!')
+            break
+print(f'Você ganhou {v} vezes')
